@@ -1,65 +1,74 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Portafolio - Rubén</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portfolio - Inicio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <a class="logo" href="index.html"><img src="https://via.placeholder.com/80x40?text=Logo" alt="Logo"></a>
-    <nav class="main-nav">
-      <a href="projects.html" data-i18n="nav_projects">Proyectos</a>
-      <a href="contact.html" data-i18n="nav_contact">Contacto</a>
-    </nav>
-    <div class="controls">
-      <button id="langBtn" aria-label="Cambiar idioma">ES/EN</button>
-      <button id="themeBtn" aria-label="Cambiar tema">🌓</button>
-    </div>
-  </header>
-
-  <main class="home">
-    <h1 data-i18n="home_title">Portafolio de Rubén</h1>
-    <p class="intro" data-i18n="home_intro">Soy Rubén, estudio ciberseguridad (ASIXc). Aquí tienes algunos de mis proyectos.</p>
-
-    <section class="projects-row">
-      <article class="project">
-        <div class="proj-info">
-          <h2 data-i18n="proj1_title">Proyecto 1</h2>
-          <p data-i18n="proj1_desc">Breve descripción del proyecto 1. Haz clic en la imagen para ver más.</p>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Mi Logo">
         </div>
-        <a class="proj-image" href="project1.html">
-          <img src="https://via.placeholder.com/600x400?text=Proyecto+1" alt="Proyecto 1">
-        </a>
-      </article>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="proyectos.html">Todos los Proyectos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
 
-      <article class="project reverse">
-        <a class="proj-image" href="project2.html">
-          <img src="https://via.placeholder.com/600x400?text=Proyecto+2" alt="Proyecto 2">
-        </a>
-        <div class="proj-info">
-          <h2 data-i18n="proj2_title">Proyecto 2</h2>
-          <p data-i18n="proj2_desc">Breve descripción del proyecto 2. Haz clic en la imagen para ver más.</p>
+    <main>
+        <div class="hero">
+            <h1>Bienvenido a Mi Portfolio</h1>
+            <p>Descubre mis proyectos destacados</p>
         </div>
-      </article>
-    </section>
 
-    <p class="all-link"><a href="projects.html" data-i18n="see_all">Ver todos los proyectos</a></p>
-  </main>
+        <section class="proyectos-destacados">
+            <article class="proyecto proyecto-izquierda">
+                <div class="proyecto-info">
+                    <h2>Proyecto 1</h2>
+                    <p>Este es el Proyecto 1, una aplicación web innovadora que revoluciona la manera de gestionar tareas diarias. Utiliza tecnologías modernas y ofrece una experiencia de usuario excepcional.</p>
+                </div>
+                <a href="proyecto1.html" class="proyecto-imagen">
+                    <img src="proyecto1.jpg" alt="Proyecto 1">
+                </a>
+            </article>
 
-  <footer class="site-footer">
-    <div class="footer-left">
-      <p>Rubén - Ciberseguridad (ASIXc)</p>
-    </div>
-    <div class="footer-right">
-      <a href="mailto:rubén@example.com">✉️ Email</a>
-      <a href="tel:+34123456789">📞 Tel</a>
-      <a href="#" aria-label="Instagram">📸 Instagram</a>
-      <a href="#" aria-label="LinkedIn">💼 LinkedIn</a>
-    </div>
-  </footer>
+            <article class="proyecto proyecto-derecha">
+                <a href="proyecto2.html" class="proyecto-imagen">
+                    <img src="proyecto2.jpg" alt="Proyecto 2">
+                </a>
+                <div class="proyecto-info">
+                    <h2>Proyecto 2</h2>
+                    <p>El Proyecto 2 es una plataforma de e-commerce diseñada para pequeñas empresas. Cuenta con un sistema de pagos integrado y una interfaz intuitiva que facilita las ventas online.</p>
+                </div>
+            </article>
+        </section>
 
-  <script src="js/main.js"></script>
+        <aside>
+            <p class="cta">¿Quieres ver más proyectos? <a href="proyectos.html">Ver todos</a></p>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mi Portfolio. Todos los derechos reservados.</p>
+        <div class="redes-sociales">
+            <a href="https://twitter.com" target="_blank">
+                <img src="twitter-icon.svg" alt="Twitter">
+            </a>
+            <a href="https://linkedin.com" target="_blank">
+                <img src="linkedin-icon.svg" alt="LinkedIn">
+            </a>
+            <a href="https://github.com" target="_blank">
+                <img src="github-icon.svg" alt="GitHub">
+            </a>
+            <a href="https://instagram.com" target="_blank">
+                <img src="instagram-icon.svg" alt="Instagram">
+            </a>
+        </div>
+    </footer>
 </body>
 </html>
