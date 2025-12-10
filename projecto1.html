@@ -5,68 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto 1 - Mi Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="logo.png" alt="Mi Logo">
+            <a href="index.html">PORTFOLIO</a>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="proyectos.html">Todos los Proyectos</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
+        <div class="header-controls">
+            <button class="theme-toggle" onclick="toggleTheme()">☀️ <span>Light</span></button>
+            <button class="lang-toggle" onclick="toggleLang()">🇪🇸 <span>ES</span></button>
+            <button class="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
     </header>
 
+    <div class="nav-overlay"></div>
+    <nav>
+        <ul>
+            <li><a href="index.html" data-i18n="nav_home">Inicio</a></li>
+            <li><a href="proyectos.html" data-i18n="nav_projects">Proyectos</a></li>
+            <li><a href="contacto.html" data-i18n="nav_contact">Contacto</a></li>
+        </ul>
+    </nav>
+
     <main>
-        <article class="proyecto-detalle">
-            <div class="proyecto-detalle-imagen">
-                <img src="proyecto1.jpg" alt="Proyecto 1">
-            </div>
-            <div class="proyecto-detalle-info">
-                <h1>Proyecto 1: Gestor de Tareas Inteligente</h1>
+        <article>
+            <div class="proyecto-detalle">
+                <div class="img-wrapper">
+                    <img src="attached_assets/stock_images/modern_website_desig_aec41a19.jpg" alt="Proyecto 1">
+                </div>
                 
-                <p>Este proyecto representa una solución innovadora para la gestión de tareas diarias. Desarrollado con las últimas tecnologías web, ofrece una experiencia de usuario fluida e intuitiva que permite a los usuarios organizar su trabajo de manera eficiente.</p>
-                
-                <h2>Características Principales</h2>
-                <ul>
-                    <li>Interfaz intuitiva y moderna</li>
-                    <li>Sincronización en tiempo real</li>
-                    <li>Notificaciones personalizables</li>
-                    <li>Modo oscuro y claro</li>
-                    <li>Compatible con todos los dispositivos</li>
-                </ul>
-                
-                <h2>Tecnologías Utilizadas</h2>
-                <p>El proyecto fue construido utilizando HTML5, CSS3, JavaScript moderno, y un backend robusto con Node.js. La base de datos MongoDB garantiza un rendimiento óptimo y escalabilidad.</p>
-                
-                <h2>Objetivos del Proyecto</h2>
-                <p>El objetivo principal era crear una herramienta que simplificara la gestión de tareas sin sacrificar funcionalidad. Se priorizó la experiencia del usuario, asegurando que cada interacción fuera natural y eficiente.</p>
-                
-                <h2>Resultados</h2>
-                <p>El proyecto ha sido implementado exitosamente y cuenta con más de 5,000 usuarios activos. La retroalimentación ha sido extremadamente positiva, destacando la facilidad de uso y la rapidez de la aplicación.</p>
+                <aside>
+                    <h1 data-i18n="project1_detail_title">Proyecto 1</h1>
+                    <h2 data-i18n="project1_detail_subtitle">Aplicación Web Moderna</h2>
+                    <p data-i18n="project1_detail_p1">Este proyecto representa una solución innovadora diseñada para resolver problemas específicos del sector tecnológico. Desarrollado utilizando las últimas tecnologías disponibles en el mercado, combina rendimiento excepcional con una experiencia de usuario intuitiva.</p>
+                    
+                    <p data-i18n="project1_detail_p2">El objetivo principal fue crear una herramienta eficiente y fácil de usar que permitiera a los usuarios optimizar sus procesos diarios. Durante el desarrollo, se prestó especial atención a la experiencia del usuario, la accesibilidad y el rendimiento.</p>
+                    
+                    <p data-i18n="project1_detail_p3">Entre las características principales se incluyen: diseño totalmente responsivo, arquitectura de componentes modulares, integración con APIs externas, sistema de autenticación seguro y panel de administración completo.</p>
+                    
+                    <p data-i18n="project1_detail_p4">Las tecnologías utilizadas incluyen React.js, Node.js, PostgreSQL, y servicios en la nube para garantizar escalabilidad y disponibilidad.</p>
+                    
+                    <div class="tags" style="margin: 25px 0;">
+                        <span class="tag">React.js</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">AWS</span>
+                    </div>
+                    
+                    <a href="proyectos.html" class="btn-secondary" data-i18n="back_projects">← Volver a proyectos</a>
+                </aside>
             </div>
         </article>
     </main>
 
     <footer>
-        <p>&copy; 2024 Mi Portfolio. Todos los derechos reservados.</p>
-        <div class="redes-sociales">
-            <a href="https://twitter.com" target="_blank">
-                <img src="twitter-icon.svg" alt="Twitter">
-            </a>
-            <a href="https://linkedin.com" target="_blank">
-                <img src="linkedin-icon.svg" alt="LinkedIn">
-            </a>
-            <a href="https://github.com" target="_blank">
-                <img src="github-icon.svg" alt="GitHub">
-            </a>
-            <a href="https://instagram.com" target="_blank">
-                <img src="instagram-icon.svg" alt="Instagram">
-            </a>
+        <div class="footer-content">
+            <div class="logo">PORTFOLIO</div>
+            <div class="redes-sociales">
+                <a href="https://facebook.com" target="_blank" title="Facebook">f</a>
+                <a href="https://twitter.com" target="_blank" title="Twitter">X</a>
+                <a href="https://instagram.com" target="_blank" title="Instagram">ig</a>
+                <a href="https://linkedin.com" target="_blank" title="LinkedIn">in</a>
+                <a href="https://github.com" target="_blank" title="GitHub">gh</a>
+            </div>
+            <p class="copyright">© 2024 Portfolio. <span data-i18n="footer_rights">Todos los derechos reservados.</span></p>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
