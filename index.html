@@ -1,120 +1,94 @@
 <!DOCTYPE html>
-<html lang="ca">
+<html lang="es">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Pàgina principal - Exemple responsive amb estructura semàntica" />
-  <meta name="author" content="El teu nom o empresa" />
-  <meta name="theme-color" content="#ffffff" />
-  <title>Pàgina Principal — Exemple</title>
-
-  <!-- Enllaça l'arxiu CSS extern (no incloure CSS aquí) -->
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Página principal con proyectos destacados" />
+  <title>Inicio — Mis Proyectos</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Skip link per a accessibilitat -->
-  <a class="skip-link" href="#main">Salta al contingut principal</a>
+  <a class="skip-link" href="#main">Ir al contenido</a>
 
-  <header class="site-header" role="banner">
+  <header class="site-header">
     <div class="container header-inner">
-      <!-- Logo (podeu canviar per <img> real) -->
-      <a href="index.html" class="logo" aria-label="Inici">
-        <img src="logo-placeholder.svg" alt="Nom del lloc — logotip" width="120" height="40" />
+      <a href="index.html" class="site-logo" aria-label="Inicio">
+        <img src="images/logo.svg" alt="Logo del sitio">
       </a>
 
-      <!-- Botó de menú per a mòbils (activat per CSS/JS) -->
-      <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Mostra el menú">
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
         <span class="hamburger" aria-hidden="true"></span>
       </button>
 
-      <!-- Navegació principal -->
-      <nav id="primary-nav" class="primary-nav" role="navigation" aria-label="Menú principal">
-        <ul class="nav-list">
-          <li class="nav-item"><a href="index.html">Inici</a></li>
-          <li class="nav-item"><a href="about.html">Sobre</a></li>
-          <li class="nav-item"><a href="contact.html">Contacte</a></li>
+      <nav class="primary-nav" aria-label="Navegación principal">
+        <ul class="nav-list" id="nav-list">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="proyectos.html">Todos los proyectos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main id="main" class="site-main" role="main">
-    <div class="container main-grid">
-      <!-- Section: secció principal de la pàgina -->
-      <section class="hero" aria-labelledby="hero-title">
-        <h1 id="hero-title">Benvinguts — Exemple de Pàgina</h1>
-        <p class="lead">Aquest és un exemple de plantilla HTML semàntica i preparada per a ser responsive amb CSS extern.</p>
-      </section>
+  <main id="main" class="site-main container">
+    <section class="projects" aria-labelledby="proyectos-title">
+      <h1 id="proyectos-title">Proyectos destacados</h1>
 
-      <!-- Article: contingut principal -->
-      <article class="content" aria-labelledby="article-title">
-        <h2 id="article-title">Article destacat</h2>
-        <p>Paràgraf d'exemple: explica el propòsit del lloc, serveis, notícies o qualsevol contingut rellevant.</p>
-        <h3>Subtítol</h3>
-        <p>Més contingut d'exemple. Inclou imatges, llistes, taules o elements multimèdia segons calgui.</p>
-      </article>
-
-      <!-- Aside: informació lateral, widgets, enllaços relacionats -->
-      <aside class="sidebar" aria-labelledby="aside-title">
-        <h2 id="aside-title">Enllaços i recursos</h2>
-        <ul>
-          <li><a href="#">Recurso 1</a></li>
-          <li><a href="#">Recurso 2</a></li>
-          <li><a href="#">Recurso 3</a></li>
-        </ul>
-      </aside>
-    </div>
-
-    <!-- Secció addicional (opcional) -->
-    <section class="features container" aria-label="Característiques">
-      <h2>Característiques</h2>
-      <div class="features-grid">
-        <div class="feature">
-          <h3>Ràpid</h3>
-          <p>Descripció breu.</p>
+      <!-- Proyecto 1: imagen a la izquierda en desktop -->
+      <div class="project-row">
+        <div class="project-info">
+          <h2>Proyecto 1 — Nombre del proyecto</h2>
+          <p>Breve descripción del Proyecto 1: qué es, objetivo y tecnologías principales. Haz clic en la imagen para ver más detalles.</p>
         </div>
-        <div class="feature">
-          <h3>Accessible</h3>
-          <p>Descripció breu.</p>
-        </div>
-        <div class="feature">
-          <h3>Responsive</h3>
-          <p>Descripció breu.</p>
+        <div class="project-image">
+          <a href="proyecto1.html" aria-label="Ver Proyecto 1">
+            <img src="images/proyecto1.jpg" alt="Imagen representativa del Proyecto 1">
+          </a>
         </div>
       </div>
+
+      <!-- Proyecto 2: imagen a la derecha en desktop (reverse) -->
+      <div class="project-row reverse">
+        <div class="project-info">
+          <h2>Proyecto 2 — Otro proyecto</h2>
+          <p>Breve descripción del Proyecto 2: alcance, público objetivo y herramientas utilizadas. Haz clic en la imagen para ver la página del proyecto.</p>
+        </div>
+        <div class="project-image">
+          <a href="proyecto2.html" aria-label="Ver Proyecto 2">
+            <img src="images/proyecto2.jpg" alt="Imagen representativa del Proyecto 2">
+          </a>
+        </div>
+      </div>
+
+      <p style="margin-top:1rem;"><a href="proyectos.html">Ver la lista completa de proyectos →</a></p>
     </section>
   </main>
 
-  <footer class="site-footer" role="contentinfo">
+  <footer class="site-footer">
     <div class="container footer-inner">
-      <p>&copy; <span id="year"></span> El teu Nom / Empresa. Tots els drets reservats.</p>
-      <nav class="social" aria-label="Xarxes socials">
-        <ul class="social-list">
-          <li><a href="#" aria-label="Segueix-nos a Twitter" rel="noopener">Twitter</a></li>
-          <li><a href="#" aria-label="Segueix-nos a Facebook" rel="noopener">Facebook</a></li>
-          <li><a href="#" aria-label="Segueix-nos a Instagram" rel="noopener">Instagram</a></li>
-        </ul>
+      <div>© <span id="year-home"></span> Tu Nombre o Empresa</div>
+      <nav class="footer-social" aria-label="Redes sociales">
+        <a href="mailto:tu@correo.com">Email</a>
+        <a href="#" rel="noopener">Twitter</a>
+        <a href="#" rel="noopener">LinkedIn</a>
+        <a href="#" rel="noopener">Instagram</a>
       </nav>
     </div>
   </footer>
 
-  <!-- Script mínim per posar l'any actual (pot quedar al final o en un arxiu .js) -->
   <script>
-    (function () {
-      var y = new Date().getFullYear();
-      var el = document.getElementById('year');
-      if (el) el.textContent = y;
-      // El botó de navegació pot canviar aria-expanded amb JS si vols:
+    // año en footer
+    document.getElementById('year-home').textContent = new Date().getFullYear();
+
+    // nav toggle
+    (function(){
       var btn = document.querySelector('.nav-toggle');
-      var nav = document.getElementById('primary-nav');
-      if (btn && nav) {
-        btn.addEventListener('click', function () {
-          var expanded = btn.getAttribute('aria-expanded') === 'true';
-          btn.setAttribute('aria-expanded', String(!expanded));
-          // Opcional: afegir/remoure classe per a mostrar/ocultar nav via CSS
-          nav.classList.toggle('is-open');
-        });
-      }
+      var nav = document.getElementById('nav-list');
+      btn.addEventListener('click', function(){
+        var expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        nav.classList.toggle('show');
+      });
     })();
   </script>
 </body>

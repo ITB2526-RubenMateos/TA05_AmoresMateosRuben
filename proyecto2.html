@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Página del Proyecto 2" />
+  <title>Proyecto 2 — Detalle</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Ir al contenido</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo" aria-label="Inicio">
+        <img src="images/logo.svg" alt="Logo del sitio">
+      </a>
+
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span class="hamburger" aria-hidden="true"></span>
+      </button>
+
+      <nav class="primary-nav" aria-label="Navegación principal">
+        <ul class="nav-list" id="nav-list-2">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="proyectos.html">Todos los proyectos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="site-main container">
+    <section class="project-detail" aria-labelledby="proj2-title">
+      <div class="detail-image">
+        <img src="images/proyecto2.jpg" alt="Imagen grande del Proyecto 2">
+      </div>
+      <div class="detail-content">
+        <h1 id="proj2-title">Proyecto 2 — Título Largo</h1>
+        <p><strong>Descripción ampliada:</strong> Explica el alcance, impacto y tecnologías del proyecto 2. Añade enlaces a repositorios, demos o recursos.</p>
+
+        <h2>Resultados</h2>
+        <p>Resultados medibles, feedback de usuarios o métricas relevantes.</p>
+
+        <p><a href="index.html">← Volver al inicio</a> · <a href="proyectos.html">Ver todos los proyectos</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year-p2"></span> Tu Nombre o Empresa</div>
+      <nav class="footer-social" aria-label="Redes sociales">
+        <a href="mailto:tu@correo.com">Email</a>
+        <a href="#" rel="noopener">Twitter</a>
+        <a href="#" rel="noopener">LinkedIn</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year-p2').textContent = new Date().getFullYear();
+    (function(){
+      var btn = document.querySelector('.nav-toggle');
+      var nav = document.getElementById('nav-list-2');
+      btn.addEventListener('click', function(){
+        var expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        nav.classList.toggle('show');
+      });
+    })();
+  </script>
+</body>
+</html>
