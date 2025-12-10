@@ -5,69 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto 2 - Mi Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="logo.png" alt="Mi Logo">
+            <a href="index.html">PORTFOLIO</a>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="proyectos.html">Todos los Proyectos</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
+        <div class="header-controls">
+            <button class="theme-toggle" onclick="toggleTheme()">☀️ <span>Light</span></button>
+            <button class="lang-toggle" onclick="toggleLang()">🇪🇸 <span>ES</span></button>
+            <button class="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
     </header>
 
+    <div class="nav-overlay"></div>
+    <nav>
+        <ul>
+            <li><a href="index.html" data-i18n="nav_home">Inicio</a></li>
+            <li><a href="proyectos.html" data-i18n="nav_projects">Proyectos</a></li>
+            <li><a href="contacto.html" data-i18n="nav_contact">Contacto</a></li>
+        </ul>
+    </nav>
+
     <main>
-        <article class="proyecto-detalle">
-            <div class="proyecto-detalle-imagen">
-                <img src="proyecto2.jpg" alt="Proyecto 2">
-            </div>
-            <div class="proyecto-detalle-info">
-                <h1>Proyecto 2: Plataforma E-commerce</h1>
+        <article>
+            <div class="proyecto-detalle">
+                <div class="img-wrapper">
+                    <img src="attached_assets/stock_images/modern_website_desig_d0644670.jpg" alt="Proyecto 2">
+                </div>
                 
-                <p>Una solución completa de comercio electrónico diseñada específicamente para pequeñas y medianas empresas. Esta plataforma permite a los negocios establecer su presencia online de manera rápida y efectiva, con todas las herramientas necesarias para gestionar ventas, inventario y clientes.</p>
-                
-                <h2>Características Principales</h2>
-                <ul>
-                    <li>Catálogo de productos con búsqueda avanzada</li>
-                    <li>Carrito de compras inteligente</li>
-                    <li>Sistema de pagos integrado seguro</li>
-                    <li>Panel de administración completo</li>
-                    <li>Análisis de ventas y estadísticas en tiempo real</li>
-                    <li>Sistema de gestión de inventario</li>
-                </ul>
-                
-                <h2>Tecnologías Utilizadas</h2>
-                <p>La plataforma está construida con React para el frontend, proporcionando una experiencia de usuario dinámica y reactiva. El backend utiliza Express.js y PostgreSQL para garantizar la seguridad y confiabilidad de las transacciones.</p>
-                
-                <h2>Proceso de Desarrollo</h2>
-                <p>El desarrollo siguió metodologías ágiles, con sprints de dos semanas y pruebas continuas. Se realizaron múltiples iteraciones basadas en feedback de usuarios beta para asegurar que la plataforma cumpliera con las necesidades reales del mercado.</p>
-                
-                <h2>Impacto</h2>
-                <p>Desde su lanzamiento, la plataforma ha ayudado a más de 100 pequeños negocios a digitalizar sus operaciones. El tiempo promedio de configuración es de solo 2 horas, y los comerciantes han reportado un incremento del 40% en sus ventas durante los primeros tres meses de uso.</p>
+                <aside>
+                    <h1 data-i18n="project2_detail_title">Proyecto 2</h1>
+                    <h2 data-i18n="project2_detail_subtitle">Dashboard de Analytics</h2>
+                    <p data-i18n="project2_detail_p1">El Proyecto 2 representa un avance significativo en el ámbito del análisis de datos y visualización. Esta plataforma fue diseñada para proporcionar insights en tiempo real a través de dashboards interactivos y reportes personalizables.</p>
+                    
+                    <p data-i18n="project2_detail_p2">Durante el desarrollo se implementaron metodologías ágiles que permitieron una entrega eficiente y de alta calidad. El equipo se enfocó en crear un producto que fuera funcional y visualmente impactante.</p>
+                    
+                    <p data-i18n="project2_detail_p3">Las funcionalidades principales incluyen: gráficos interactivos en tiempo real, sistema de alertas configurables, exportación de reportes en múltiples formatos, y un sistema de permisos granular.</p>
+                    
+                    <p data-i18n="project2_detail_p4">El stack tecnológico incluye Vue.js, D3.js para visualizaciones, Python con FastAPI en el backend, y MongoDB para almacenamiento de datos.</p>
+                    
+                    <div class="tags" style="margin: 25px 0;">
+                        <span class="tag">Vue.js</span>
+                        <span class="tag">D3.js</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">MongoDB</span>
+                    </div>
+                    
+                    <a href="proyectos.html" class="btn-secondary" data-i18n="back_projects">← Volver a proyectos</a>
+                </aside>
             </div>
         </article>
     </main>
 
     <footer>
-        <p>&copy; 2024 Mi Portfolio. Todos los derechos reservados.</p>
-        <div class="redes-sociales">
-            <a href="https://twitter.com" target="_blank">
-                <img src="twitter-icon.svg" alt="Twitter">
-            </a>
-            <a href="https://linkedin.com" target="_blank">
-                <img src="linkedin-icon.svg" alt="LinkedIn">
-            </a>
-            <a href="https://github.com" target="_blank">
-                <img src="github-icon.svg" alt="GitHub">
-            </a>
-            <a href="https://instagram.com" target="_blank">
-                <img src="instagram-icon.svg" alt="Instagram">
-            </a>
+        <div class="footer-content">
+            <div class="logo">PORTFOLIO</div>
+            <div class="redes-sociales">
+                <a href="https://facebook.com" target="_blank" title="Facebook">f</a>
+                <a href="https://twitter.com" target="_blank" title="Twitter">X</a>
+                <a href="https://instagram.com" target="_blank" title="Instagram">ig</a>
+                <a href="https://linkedin.com" target="_blank" title="LinkedIn">in</a>
+                <a href="https://github.com" target="_blank" title="GitHub">gh</a>
+            </div>
+            <p class="copyright">© 2024 Portfolio. <span data-i18n="footer_rights">Todos los derechos reservados.</span></p>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
