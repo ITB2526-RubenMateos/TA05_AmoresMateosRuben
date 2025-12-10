@@ -1,0 +1,275 @@
+/* ===============================
+   Reset y estilos base
+   =============================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ===============================
+   Header
+   =============================== */
+.site-header {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+}
+
+/* Logo */
+.logo img {
+    display: block;
+}
+
+/* Navegación */
+.primary-nav {
+    display: flex;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-item a {
+    display: block;
+    padding: 0.5rem 0;
+    font-weight: bold;
+}
+
+/* Botón menú móvil */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    position: relative;
+    transition: 0.3s;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: "";
+    position: absolute;
+    left: 0;
+}
+
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    top: 8px;
+}
+
+/* ===============================
+   Main
+   =============================== */
+.site-main {
+    padding: 2rem 0;
+}
+
+/* Grid principal de la página */
+.main-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+/* Secciones */
+.hero {
+    margin-bottom: 2rem;
+}
+
+.hero .lead {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+article.content {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+aside.sidebar {
+    background-color: #f0f0f0;
+    padding: 1rem;
+    border-radius: 6px;
+}
+
+.features {
+    margin-top: 2rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.feature {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Formularios */
+.contact-form {
+    display: grid;
+    gap: 1rem;
+}
+
+.contact-form .form-row {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    margin-bottom: 0.25rem;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+/* ===============================
+   Footer
+   =============================== */
+.site-footer {
+    background-color: #222;
+    color: #fff;
+    padding: 2rem 0;
+    margin-top: 2rem;
+}
+
+.site-footer p {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.social-list {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-list a {
+    color: #fff;
+}
+
+/* ===============================
+   Responsive
+   =============================== */
+@media (max-width: 992px) {
+    .main-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+    }
+    .nav-list.is-open {
+        display: flex;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+}
+
+/* ===============================
+   Accesibilidad
+   =============================== */
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    left: 10px;
+    top: 10px;
+    width: auto;
+    height: auto;
+    background: #007bff;
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
