@@ -1,95 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Página principal con proyectos destacados" />
-  <title>Inicio — Mis Proyectos</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Portafolio - Rubén</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Ir al contenido</a>
-
   <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="site-logo" aria-label="Inicio">
-        <img src="images/logo.svg" alt="Logo del sitio">
-      </a>
-
-      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
-        <span class="hamburger" aria-hidden="true"></span>
-      </button>
-
-      <nav class="primary-nav" aria-label="Navegación principal">
-        <ul class="nav-list" id="nav-list">
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="proyectos.html">Todos los proyectos</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-      </nav>
+    <a class="logo" href="index.html"><img src="https://via.placeholder.com/80x40?text=Logo" alt="Logo"></a>
+    <nav class="main-nav">
+      <a href="projects.html" data-i18n="nav_projects">Proyectos</a>
+      <a href="contact.html" data-i18n="nav_contact">Contacto</a>
+    </nav>
+    <div class="controls">
+      <button id="langBtn" aria-label="Cambiar idioma">ES/EN</button>
+      <button id="themeBtn" aria-label="Cambiar tema">🌓</button>
     </div>
   </header>
 
-  <main id="main" class="site-main container">
-    <section class="projects" aria-labelledby="proyectos-title">
-      <h1 id="proyectos-title">Proyectos destacados</h1>
+  <main class="home">
+    <h1 data-i18n="home_title">Portafolio de Rubén</h1>
+    <p class="intro" data-i18n="home_intro">Soy Rubén, estudio ciberseguridad (ASIXc). Aquí tienes algunos de mis proyectos.</p>
 
-      <!-- Proyecto 1: imagen a la izquierda en desktop -->
-      <div class="project-row">
-        <div class="project-info">
-          <h2>Proyecto 1 — Nombre del proyecto</h2>
-          <p>Breve descripción del Proyecto 1: qué es, objetivo y tecnologías principales. Haz clic en la imagen para ver más detalles.</p>
+    <section class="projects-row">
+      <article class="project">
+        <div class="proj-info">
+          <h2 data-i18n="proj1_title">Proyecto 1</h2>
+          <p data-i18n="proj1_desc">Breve descripción del proyecto 1. Haz clic en la imagen para ver más.</p>
         </div>
-        <div class="project-image">
-          <a href="proyecto1.html" aria-label="Ver Proyecto 1">
-            <img src="images/proyecto1.jpg" alt="Imagen representativa del Proyecto 1">
-          </a>
-        </div>
-      </div>
+        <a class="proj-image" href="project1.html">
+          <img src="https://via.placeholder.com/600x400?text=Proyecto+1" alt="Proyecto 1">
+        </a>
+      </article>
 
-      <!-- Proyecto 2: imagen a la derecha en desktop (reverse) -->
-      <div class="project-row reverse">
-        <div class="project-info">
-          <h2>Proyecto 2 — Otro proyecto</h2>
-          <p>Breve descripción del Proyecto 2: alcance, público objetivo y herramientas utilizadas. Haz clic en la imagen para ver la página del proyecto.</p>
+      <article class="project reverse">
+        <a class="proj-image" href="project2.html">
+          <img src="https://via.placeholder.com/600x400?text=Proyecto+2" alt="Proyecto 2">
+        </a>
+        <div class="proj-info">
+          <h2 data-i18n="proj2_title">Proyecto 2</h2>
+          <p data-i18n="proj2_desc">Breve descripción del proyecto 2. Haz clic en la imagen para ver más.</p>
         </div>
-        <div class="project-image">
-          <a href="proyecto2.html" aria-label="Ver Proyecto 2">
-            <img src="images/proyecto2.jpg" alt="Imagen representativa del Proyecto 2">
-          </a>
-        </div>
-      </div>
-
-      <p style="margin-top:1rem;"><a href="proyectos.html">Ver la lista completa de proyectos →</a></p>
+      </article>
     </section>
+
+    <p class="all-link"><a href="projects.html" data-i18n="see_all">Ver todos los proyectos</a></p>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>© <span id="year-home"></span> Tu Nombre o Empresa</div>
-      <nav class="footer-social" aria-label="Redes sociales">
-        <a href="mailto:tu@correo.com">Email</a>
-        <a href="#" rel="noopener">Twitter</a>
-        <a href="#" rel="noopener">LinkedIn</a>
-        <a href="#" rel="noopener">Instagram</a>
-      </nav>
+    <div class="footer-left">
+      <p>Rubén - Ciberseguridad (ASIXc)</p>
+    </div>
+    <div class="footer-right">
+      <a href="mailto:rubén@example.com">✉️ Email</a>
+      <a href="tel:+34123456789">📞 Tel</a>
+      <a href="#" aria-label="Instagram">📸 Instagram</a>
+      <a href="#" aria-label="LinkedIn">💼 LinkedIn</a>
     </div>
   </footer>
 
-  <script>
-    // año en footer
-    document.getElementById('year-home').textContent = new Date().getFullYear();
-
-    // nav toggle
-    (function(){
-      var btn = document.querySelector('.nav-toggle');
-      var nav = document.getElementById('nav-list');
-      btn.addEventListener('click', function(){
-        var expanded = btn.getAttribute('aria-expanded') === 'true';
-        btn.setAttribute('aria-expanded', String(!expanded));
-        nav.classList.toggle('show');
-      });
-    })();
-  </script>
+  <script src="js/main.js"></script>
 </body>
 </html>

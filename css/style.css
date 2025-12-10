@@ -1,0 +1,32 @@
+:root{
+  --bg:#ffffff;--fg:#111827;--accent:#0ea5a4;--muted:#6b7280;
+}
+[data-theme="dark"]{
+  --bg:#0b1220;--fg:#e6eef8;--accent:#38bdf8;--muted:#9ca3af;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial; background:var(--bg);color:var(--fg);}
+.site-header{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;border-bottom:1px solid var(--muted)}
+.logo img{height:40px}
+.main-nav a{margin:0 8px;text-decoration:none;color:var(--fg)}
+.controls button{margin-left:8px;padding:6px 8px;border-radius:6px;border:1px solid var(--muted);background:transparent;color:var(--fg)}
+.home{max-width:1000px;margin:28px auto;padding:0 16px}
+.projects-row{display:flex;flex-direction:column;gap:28px}
+.project{display:flex;align-items:center;gap:18px}
+.project.reverse{flex-direction:row-reverse}
+.proj-image img{width:100%;height:auto;max-width:600px;border-radius:8px}
+.proj-info{max-width:480px}
+.project-page .project-detail{display:flex;gap:20px;align-items:center;max-width:1000px;margin:28px auto;padding:0 16px}
+.project-image img{width:100%;max-width:600px;border-radius:8px}
+.project-text{max-width:520px}
+.all-link{text-align:center;margin-top:20px}
+.site-footer{display:flex;justify-content:space-between;padding:12px 18px;border-top:1px solid var(--muted);position:fixed;left:0;right:0;bottom:0;background:var(--bg)}
+.contact-page .contact-form{max-width:600px;margin:28px auto;display:flex;flex-direction:column;gap:10px}
+.contact-form input,.contact-form textarea{padding:8px;border:1px solid var(--muted);border-radius:6px}
+.contact-form button{padding:10px 14px;background:var(--accent);color:white;border:none;border-radius:6px}
+@media(min-width:800px){
+  .projects-row{flex-direction:row}
+  .project{flex:1}
+}
+/* small accessibility tweaks */
+a:focus,button:focus,input:focus{outline:3px solid color-mix(in srgb,var(--accent) 30%, transparent);outline-offset:2px}
