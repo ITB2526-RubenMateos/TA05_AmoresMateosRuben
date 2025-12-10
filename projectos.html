@@ -5,106 +5,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todos los Proyectos - Mi Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="logo.png" alt="Mi Logo">
+            <a href="index.html">PORTFOLIO</a>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="proyectos.html">Todos los Proyectos</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
+        <div class="header-controls">
+            <button class="theme-toggle" onclick="toggleTheme()">☀️ <span>Light</span></button>
+            <button class="lang-toggle" onclick="toggleLang()">🇪🇸 <span>ES</span></button>
+            <button class="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
     </header>
 
+    <div class="nav-overlay"></div>
+    <nav>
+        <ul>
+            <li><a href="index.html" data-i18n="nav_home">Inicio</a></li>
+            <li><a href="proyectos.html" data-i18n="nav_projects">Proyectos</a></li>
+            <li><a href="contacto.html" data-i18n="nav_contact">Contacto</a></li>
+        </ul>
+    </nav>
+
     <main>
-        <div class="hero">
-            <h1>Todos Mis Proyectos</h1>
-            <p>Explora la lista completa de trabajos realizados</p>
+        <div class="section-title" style="margin-top: 40px;">
+            <h2 data-i18n="all_projects_title">Todos Mis Proyectos</h2>
+            <p data-i18n="all_projects_subtitle">Colección completa de trabajos realizados, cada uno representando un desafío único.</p>
         </div>
 
-        <section class="proyectos-grid">
-            <article class="proyecto-card">
-                <img src="proyecto1.jpg" alt="Proyecto 1">
-                <div class="proyecto-card-info">
-                    <h2>Proyecto 1</h2>
-                    <h3>Gestor de Tareas Inteligente</h3>
-                    <p>Aplicación web para gestión eficiente de tareas con sincronización en tiempo real.</p>
-                    <a href="proyecto1.html">Ver Detalles</a>
-                </div>
-            </article>
+        <section class="lista-proyectos">
+            <div class="proyecto-item">
+                <a href="proyecto1.html">
+                    <img src="attached_assets/stock_images/modern_website_desig_aec41a19.jpg" alt="Proyecto 1">
+                    <div class="info">
+                        <h3 data-i18n="project1_title">Proyecto 1 - Aplicación Web</h3>
+                        <p data-i18n="project1_desc">Plataforma moderna con arquitectura escalable y diseño responsive.</p>
+                    </div>
+                </a>
+            </div>
 
-            <article class="proyecto-card">
-                <img src="proyecto2.jpg" alt="Proyecto 2">
-                <div class="proyecto-card-info">
-                    <h2>Proyecto 2</h2>
-                    <h3>Plataforma E-commerce</h3>
-                    <p>Solución completa de comercio electrónico para pequeñas y medianas empresas.</p>
-                    <a href="proyecto2.html">Ver Detalles</a>
-                </div>
-            </article>
+            <div class="proyecto-item">
+                <a href="proyecto2.html">
+                    <img src="attached_assets/stock_images/modern_website_desig_d0644670.jpg" alt="Proyecto 2">
+                    <div class="info">
+                        <h3 data-i18n="project2_title">Proyecto 2 - Dashboard Analytics</h3>
+                        <p data-i18n="project2_desc">Sistema de análisis de datos en tiempo real con visualizaciones interactivas.</p>
+                    </div>
+                </a>
+            </div>
 
-            <article class="proyecto-card">
-                <img src="proyecto3.jpg" alt="Proyecto 3">
-                <div class="proyecto-card-info">
-                    <h2>Proyecto 3</h2>
-                    <h3>Blog Personal Responsive</h3>
-                    <p>Sistema de blog con CMS personalizado y diseño totalmente adaptable a móviles.</p>
-                    <a href="#">Ver Detalles</a>
-                </div>
-            </article>
+            <div class="proyecto-item">
+                <a href="#">
+                    <img src="attached_assets/stock_images/modern_website_desig_9bdbb7a5.jpg" alt="Proyecto 3">
+                    <div class="info">
+                        <h3 data-i18n="project3_title">Proyecto 3 - E-Commerce</h3>
+                        <p data-i18n="project3_desc">Plataforma de comercio electrónico con pasarela de pagos integrada.</p>
+                    </div>
+                </a>
+            </div>
 
-            <article class="proyecto-card">
-                <img src="proyecto4.jpg" alt="Proyecto 4">
-                <div class="proyecto-card-info">
-                    <h2>Proyecto 4</h2>
-                    <h3>Dashboard Analytics</h3>
-                    <p>Panel de control con visualización de datos en tiempo real y gráficos interactivos.</p>
-                    <a href="#">Ver Detalles</a>
-                </div>
-            </article>
+            <div class="proyecto-item">
+                <a href="#">
+                    <img src="attached_assets/stock_images/modern_website_desig_2cc73064.jpg" alt="Proyecto 4">
+                    <div class="info">
+                        <h3 data-i18n="project4_title">Proyecto 4 - App Móvil</h3>
+                        <p data-i18n="project4_desc">Aplicación móvil híbrida para gestión de productividad.</p>
+                    </div>
+                </a>
+            </div>
 
-            <article class="proyecto-card">
-                <img src="proyecto5.jpg" alt="Proyecto 5">
-                <div class="proyecto-card-info">
-                    <h2>Proyecto 5</h2>
-                    <h3>App Móvil de Fitness</h3>
-                    <p>Aplicación móvil para seguimiento de ejercicios y planes de entrenamiento personalizados.</p>
-                    <a href="#">Ver Detalles</a>
-                </div>
-            </article>
+            <div class="proyecto-item">
+                <a href="#">
+                    <img src="attached_assets/stock_images/modern_website_desig_cb20cdf6.jpg" alt="Proyecto 5">
+                    <div class="info">
+                        <h3 data-i18n="project5_title">Proyecto 5 - API REST</h3>
+                        <p data-i18n="project5_desc">Backend robusto con autenticación y documentación completa.</p>
+                    </div>
+                </a>
+            </div>
 
-            <article class="proyecto-card">
-                <img src="proyecto6.jpg" alt="Proyecto 6">
-                <div class="proyecto-card-info">
-                    <h2>Proyecto 6</h2>
-                    <h3>Sistema de Reservas</h3>
-                    <p>Plataforma web para gestión de reservas en restaurantes con confirmación automática.</p>
-                    <a href="#">Ver Detalles</a>
-                </div>
-            </article>
+            <div class="proyecto-item">
+                <a href="#">
+                    <img src="attached_assets/stock_images/modern_website_desig_07ab245a.jpg" alt="Proyecto 6">
+                    <div class="info">
+                        <h3 data-i18n="project6_title">Proyecto 6 - Portal Web</h3>
+                        <p data-i18n="project6_desc">Portal corporativo con CMS personalizado y SEO optimizado.</p>
+                    </div>
+                </a>
+            </div>
         </section>
+
+        <div class="center-btn">
+            <a href="index.html" class="btn-secondary" data-i18n="back_home">← Volver al inicio</a>
+        </div>
     </main>
 
     <footer>
-        <p>&copy; 2024 Mi Portfolio. Todos los derechos reservados.</p>
-        <div class="redes-sociales">
-            <a href="https://twitter.com" target="_blank">
-                <img src="twitter-icon.svg" alt="Twitter">
-            </a>
-            <a href="https://linkedin.com" target="_blank">
-                <img src="linkedin-icon.svg" alt="LinkedIn">
-            </a>
-            <a href="https://github.com" target="_blank">
-                <img src="github-icon.svg" alt="GitHub">
-            </a>
-            <a href="https://instagram.com" target="_blank">
-                <img src="instagram-icon.svg" alt="Instagram">
-            </a>
+        <div class="footer-content">
+            <div class="logo">PORTFOLIO</div>
+            <div class="redes-sociales">
+                <a href="https://facebook.com" target="_blank" title="Facebook">f</a>
+                <a href="https://twitter.com" target="_blank" title="Twitter">X</a>
+                <a href="https://instagram.com" target="_blank" title="Instagram">ig</a>
+                <a href="https://linkedin.com" target="_blank" title="LinkedIn">in</a>
+                <a href="https://github.com" target="_blank" title="GitHub">gh</a>
+            </div>
+            <p class="copyright">© 2024 Portfolio. <span data-i18n="footer_rights">Todos los derechos reservados.</span></p>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
