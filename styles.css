@@ -39,6 +39,8 @@ body {
     min-height: 100vh;
 }
 
+/* ================= HEADER ================= */
+
 header {
     background: var(--bg-secondary);
     backdrop-filter: blur(10px);
@@ -53,16 +55,46 @@ header {
     align-items: center;
 }
 
+/* --- LOGO: imagen + texto --- */
+/* Compatibilidad: .logo a (tu markup) */
 .logo a {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Si tu CSS anterior aplicaba gradiente al enlace, lo reservamos solo al texto */
+.logo-text {
     font-size: 1.5rem;
     font-weight: 700;
+    letter-spacing: -0.5px;
     background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-decoration: none;
-    letter-spacing: -0.5px;
+    display: inline-block;
 }
+
+/* Imagen del logo */
+.logo-img {
+    width: 40px;            /* ajusta aquí si quieres otro tamaño */
+    height: 40px;
+    object-fit: cover;
+    border-radius: 8px;     /* usa 50% para circular */
+    display: block;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.logo a:hover .logo-img,
+.logo a:focus .logo-img {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.22);
+}
+
+/* ================= CONTROLES ================= */
 
 .header-controls {
     display: flex;
@@ -127,6 +159,8 @@ header {
     transform: rotate(-45deg) translate(6px, -6px);
 }
 
+/* ================= NAV / OVERLAY ================= */
+
 nav {
     position: fixed;
     top: 0;
@@ -188,6 +222,8 @@ nav ul li a:hover {
     visibility: visible;
 }
 
+/* ================= MAIN ================= */
+
 main {
     max-width: 1400px;
     margin: 0 auto;
@@ -218,6 +254,8 @@ main {
     max-width: 600px;
     margin: 0 auto;
 }
+
+/* ================= ARTICLES / CARDS ================= */
 
 article {
     background: var(--bg-card);
@@ -254,6 +292,7 @@ article p {
     font-size: 1.1rem;
 }
 
+/* Section title */
 .section-title {
     text-align: center;
     margin-bottom: 50px;
@@ -270,6 +309,8 @@ article p {
     color: var(--text-secondary);
     font-size: 1.1rem;
 }
+
+/* ================= PROYECTOS GRID ================= */
 
 .proyectos-destacados {
     display: grid;
@@ -387,6 +428,8 @@ article p {
     font-weight: 500;
 }
 
+/* ================= PROYECTO DETALLE ================= */
+
 .proyecto-detalle {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -426,6 +469,8 @@ article p {
     color: var(--text-secondary);
     margin-bottom: 20px;
 }
+
+/* ================= LISTA PROYECTOS ================= */
 
 .lista-proyectos {
     display: grid;
@@ -477,6 +522,8 @@ article p {
     color: var(--text-secondary);
     font-size: 0.95rem;
 }
+
+/* ================= FORMULARIO CONTACTO ================= */
 
 .formulario-contacto {
     max-width: 700px;
@@ -556,6 +603,8 @@ article p {
     box-shadow: 0 15px 40px rgba(99, 102, 241, 0.4);
 }
 
+/* ================= BOTONES ================= */
+
 .btn-primary {
     display: inline-flex;
     align-items: center;
@@ -594,6 +643,8 @@ article p {
     color: white;
     border-color: var(--accent);
 }
+
+/* ================= FOOTER ================= */
 
 .center-btn {
     text-align: center;
@@ -658,6 +709,8 @@ footer .copyright {
     color: var(--text-secondary);
 }
 
+/* ================= RESPONSIVE ================= */
+
 @media (max-width: 900px) {
     .hero h1 {
         font-size: 2.5rem;
@@ -703,3 +756,20 @@ footer .copyright {
         padding: 10px;
     }
 }
+
+/* small accessibility tweaks */
+a:focus,button:focus,input:focus{outline:3px solid color-mix(in srgb,var(--accent) 30%, transparent);outline-offset:2px}
+
+/* ================= EXTRA: ajustes específicos de logo en pantallas muy pequeñas ================= */
+@media (max-width: 420px) {
+  .logo-text { display: none; }
+  .logo-img { width: 36px; height: 36px; }
+}
+
+/* Mejora de renderizado de texto */
+.logo-text,
+header .logo a {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
