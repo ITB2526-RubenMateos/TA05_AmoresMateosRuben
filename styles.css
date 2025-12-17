@@ -755,6 +755,19 @@ footer .copyright {
     .lang-toggle {
         padding: 10px;
     }
+
+    /* Buscador y filtros */
+.buscador-filtros {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.7rem;
+}
+
+.proyectos-lista {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+}
 }
 
 /* small accessibility tweaks */
