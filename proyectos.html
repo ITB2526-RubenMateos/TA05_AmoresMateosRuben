@@ -3,67 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyectos - Portfolio</title>
+    <title>Todos los Proyectos - Mi Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="logo.jpg">
 </head>
 <body>
-
-<header>
-    <div class="logo">PORTFOLIO</div>
-</header>
-
-<main>
-
-    <div class="section-title">
-        <h2>Proyectos</h2>
-        <p>Busca y filtra mis proyectos</p>
-    </div>
-
-    <!-- CONTROLES -->
-    <div class="projects-controls">
-        <input
-            type="search"
-            id="project-search"
-            placeholder="Buscar proyectos..."
-            aria-label="Buscar proyectos"
-        >
-
-        <div class="projects-controls-right">
-            <select id="sort-projects">
-                <option value="recent">Más recientes</option>
-                <option value="alpha">Alfabético</option>
-            </select>
-
-            <button id="toggle-filters" class="btn-secondary">
-                Filtros
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo.jpg" alt="Logo" class="logo-img" width="40" height="40">
+                <span class="logo-text">PORTFOLIO</span>
+            </a>
+        </div>
+        <div class="header-controls">
+            <button class="theme-toggle" onclick="toggleTheme()">☀️ <span>Light</span></button>
+            <button class="lang-toggle" onclick="toggleLang()">🇪🇸 <span>ES</span></button>
+            <button class="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
         </div>
-    </div>
+    </header>
 
-    <!-- FILTROS -->
-    <div id="filters-panel" class="filters-panel">
-        <h4>Filtrar por tecnología</h4>
-        <div id="filters-container"></div>
-    </div>
+    <div class="nav-overlay"></div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="proyectos.html">Proyectos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
 
-    <!-- LISTA DE PROYECTOS -->
-    <section class="lista-proyectos" id="projects-list"></section>
+    <main>
+        <section class="buscador-filtros">
+            <input type="text" id="buscador" placeholder="Buscar proyectos..." />
+            <select id="filtro-tecnologia">
+                <option value="">Todas las tecnologías</option>
+                <option value="React">React</option>
+                <option value="Node.js">Node.js</option>
+                <option value="Python">Python</option>
+                <option value="Android">Android</option>
+                <option value="iOS">iOS</option>
+                <option value="PHP">PHP</option>
+                <option value="SQL">SQL</option>
+                <option value="Ciberseguridad">Ciberseguridad</option>
+                <option value="Machine Learning">Machine Learning</option>
+                <option value="Otros">Otros</option>
+            </select>
+        </section>
+        <section class="proyectos-lista" id="proyectos-lista">
+            <!-- Los proyectos se generan por JS -->
+        </section>
+    </main>
 
-    <p class="projects-count" id="projects-count"></p>
-
-</main>
-
-<footer>
-    <div class="footer-content">
-        <div class="logo">PORTFOLIO</div>
-        <p class="copyright">
-            © 2025 - Rubén Mateos Amores. Todos los derechos reservados.
-        </p>
-    </div>
-</footer>
-
-<script src="script.js"></script>
+    <footer>
+        <div class="footer-content">
+            <div class="logo">
+                <img src="logo.jpg" alt="Logo de Portfolio" class="logo-img" width="32" height="32">
+                <span class="logo-text">PORTFOLIO</span>
+            </div>
+            <div class="redes-sociales">
+                <a href="https://facebook.com" target="_blank" title="Facebook">f</a>
+                <a href="https://twitter.com" target="_blank" title="Twitter">X</a>
+                <a href="https://instagram.com" target="_blank" title="Instagram">ig</a>
+                <a href="https://linkedin.com" target="_blank" title="LinkedIn">in</a>
+                <a href="https://github.com/ITB2526-RubenMateos/TA05_AmoresMateosRuben" target="_blank" title="GitHub">gh</a>
+            </div>
+            <p class="copyright">© 2025-Rubén Mateos Amores. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
