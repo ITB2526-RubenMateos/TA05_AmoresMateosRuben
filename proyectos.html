@@ -11,8 +11,8 @@
 <body>
     <header>
         <div class="logo">
-            <a href="index.html">
-                <img src="logo.jpg" alt="Logo" class="logo-img" width="40" height="40">
+            <a href="index.html" aria-label="Inicio - Portfolio">
+                <img src="logo.jpg" alt="Logo de Portfolio" class="logo-img" width="40" height="40" loading="lazy">
                 <span class="logo-text">PORTFOLIO</span>
             </a>
         </div>
@@ -30,40 +30,88 @@
     <div class="nav-overlay"></div>
     <nav>
         <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="proyectos.html">Proyectos</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="index.html" data-i18n="nav_home">Inicio</a></li>
+            <li><a href="proyectos.html" data-i18n="nav_projects">Proyectos</a></li>
+            <li><a href="contacto.html" data-i18n="nav_contact">Contacto</a></li>
         </ul>
     </nav>
 
     <main>
-        <section class="buscador-filtros">
-            <input type="text" id="buscador" placeholder="Buscar proyectos..." />
-            <select id="filtro-tecnologia">
-                <option value="">Todas las tecnologías</option>
-                <option value="React">React</option>
-                <option value="Node.js">Node.js</option>
-                <option value="Python">Python</option>
-                <option value="Android">Android</option>
-                <option value="iOS">iOS</option>
-                <option value="PHP">PHP</option>
-                <option value="SQL">SQL</option>
-                <option value="Ciberseguridad">Ciberseguridad</option>
-                <option value="Machine Learning">Machine Learning</option>
-                <option value="Otros">Otros</option>
-            </select>
+        <div class="section-title" style="margin-top: 40px;">
+            <h2 data-i18n="all_projects_title">Todos Mis Proyectos</h2>
+            <p data-i18n="all_projects_subtitle">Colección completa de trabajos realizados, cada uno representando un desafío único.</p>
+        </div>
+
+        <section class="lista-proyectos">
+            <div class="proyecto-item">
+                <a href="proyecto1.html">
+                    <img src="foto1.jpeg" alt="Proyecto 1">
+                    <div class="info">
+                        <h3 data-i18n="project1_title">Proyecto 1 - Aplicación Web</h3>
+                        <p data-i18n="project1_desc">Plataforma moderna con arquitectura escalable y diseño responsive.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="proyecto-item">
+                <a href="proyecto2.html">
+                    <img src="foto2.jpeg" alt="Proyecto 2">
+                    <div class="info">
+                        <h3 data-i18n="project2_title">Proyecto 2 - Dashboard Analytics</h3>
+                        <p data-i18n="project2_desc">Sistema de análisis de datos en tiempo real con visualizaciones interactivas.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="proyecto-item">
+                <a href="#">
+                    <img src="foto3.jpeg" alt="Proyecto 3">
+                    <div class="info">
+                        <h3 data-i18n="project3_title">Proyecto 3 - E-Commerce</h3>
+                        <p data-i18n="project3_desc">Plataforma de comercio electrónico con pasarela de pagos integrada.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="proyecto-item">
+                <a href="#">
+                    <img src="foto4.jpeg" alt="Proyecto 4">
+                    <div class="info">
+                        <h3 data-i18n="project4_title">Proyecto 4 - App Móvil</h3>
+                        <p data-i18n="project4_desc">Aplicación móvil híbrida para gestión de productividad.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="proyecto-item">
+                <a href="#">
+                    <img src="foto5.jpeg" alt="Proyecto 5">
+                    <div class="info">
+                        <h3 data-i18n="project5_title">Proyecto 5 - API REST</h3>
+                        <p data-i18n="project5_desc">Backend robusto con autenticación y documentación completa.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="proyecto-item">
+                <a href="#">
+                    <img src="foto6.jpeg" alt="Proyecto 6">
+                    <div class="info">
+                        <h3 data-i18n="project6_title">Proyecto 6 - Portal Web</h3>
+                        <p data-i18n="project6_desc">Portal corporativo con CMS personalizado y SEO optimizado.</p>
+                    </div>
+                </a>
+            </div>
         </section>
-        <section class="proyectos-lista" id="proyectos-lista">
-            <!-- Los proyectos se generan por JS -->
-        </section>
+
+        <div class="center-btn">
+            <a href="index.html" class="btn-secondary" data-i18n="back_home">← Volver al inicio</a>
+        </div>
     </main>
 
     <footer>
         <div class="footer-content">
-            <div class="logo">
-                <img src="logo.jpg" alt="Logo de Portfolio" class="logo-img" width="32" height="32">
-                <span class="logo-text">PORTFOLIO</span>
-            </div>
+            <div class="logo">PORTFOLIO</div>
             <div class="redes-sociales">
                 <a href="https://facebook.com" target="_blank" title="Facebook">f</a>
                 <a href="https://twitter.com" target="_blank" title="Twitter">X</a>
@@ -71,9 +119,10 @@
                 <a href="https://linkedin.com" target="_blank" title="LinkedIn">in</a>
                 <a href="https://github.com/ITB2526-RubenMateos/TA05_AmoresMateosRuben" target="_blank" title="GitHub">gh</a>
             </div>
-            <p class="copyright">© 2025-Rubén Mateos Amores. Todos los derechos reservados.</p>
+            <p class="copyright">© 2025-Rubén Mateos Amores. <span data-i18n="footer_rights">Todos los derechos reservados.</span></p>
         </div>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
