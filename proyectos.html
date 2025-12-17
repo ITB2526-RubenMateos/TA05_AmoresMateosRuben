@@ -3,126 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todos los Proyectos - Mi Portfolio</title>
+    <title>Proyectos - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="logo.jpg">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <a href="index.html" aria-label="Inicio - Portfolio">
-                <img src="logo.jpg" alt="Logo de Portfolio" class="logo-img" width="40" height="40" loading="lazy">
-                <span class="logo-text">PORTFOLIO</span>
-            </a>
-        </div>
-        <div class="header-controls">
-            <button class="theme-toggle" onclick="toggleTheme()">☀️ <span>Light</span></button>
-            <button class="lang-toggle" onclick="toggleLang()">🇪🇸 <span>ES</span></button>
-            <button class="hamburger" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
+
+<header>
+    <div class="logo">PORTFOLIO</div>
+</header>
+
+<main>
+
+    <div class="section-title">
+        <h2>Proyectos</h2>
+        <p>Busca y filtra mis proyectos</p>
+    </div>
+
+    <!-- CONTROLES -->
+    <div class="projects-controls">
+        <input
+            type="search"
+            id="project-search"
+            placeholder="Buscar proyectos..."
+            aria-label="Buscar proyectos"
+        >
+
+        <div class="projects-controls-right">
+            <select id="sort-projects">
+                <option value="recent">Más recientes</option>
+                <option value="alpha">Alfabético</option>
+            </select>
+
+            <button id="toggle-filters" class="btn-secondary">
+                Filtros
             </button>
         </div>
-    </header>
+    </div>
 
-    <div class="nav-overlay"></div>
-    <nav>
-        <ul>
-            <li><a href="index.html" data-i18n="nav_home">Inicio</a></li>
-            <li><a href="proyectos.html" data-i18n="nav_projects">Proyectos</a></li>
-            <li><a href="contacto.html" data-i18n="nav_contact">Contacto</a></li>
-        </ul>
-    </nav>
+    <!-- FILTROS -->
+    <div id="filters-panel" class="filters-panel">
+        <h4>Filtrar por tecnología</h4>
+        <div id="filters-container"></div>
+    </div>
 
-    <main>
-        <div class="section-title" style="margin-top: 40px;">
-            <h2 data-i18n="all_projects_title">Todos Mis Proyectos</h2>
-            <p data-i18n="all_projects_subtitle">Colección completa de trabajos realizados, cada uno representando un desafío único.</p>
-        </div>
+    <!-- LISTA DE PROYECTOS -->
+    <section class="lista-proyectos" id="projects-list"></section>
 
-        <section class="lista-proyectos">
-            <div class="proyecto-item">
-                <a href="proyecto1.html">
-                    <img src="foto1.jpeg" alt="Proyecto 1">
-                    <div class="info">
-                        <h3 data-i18n="project1_title">Proyecto 1 - Aplicación Web</h3>
-                        <p data-i18n="project1_desc">Plataforma moderna con arquitectura escalable y diseño responsive.</p>
-                    </div>
-                </a>
-            </div>
+    <p class="projects-count" id="projects-count"></p>
 
-            <div class="proyecto-item">
-                <a href="proyecto2.html">
-                    <img src="foto2.jpeg" alt="Proyecto 2">
-                    <div class="info">
-                        <h3 data-i18n="project2_title">Proyecto 2 - Dashboard Analytics</h3>
-                        <p data-i18n="project2_desc">Sistema de análisis de datos en tiempo real con visualizaciones interactivas.</p>
-                    </div>
-                </a>
-            </div>
+</main>
 
-            <div class="proyecto-item">
-                <a href="#">
-                    <img src="foto3.jpeg" alt="Proyecto 3">
-                    <div class="info">
-                        <h3 data-i18n="project3_title">Proyecto 3 - E-Commerce</h3>
-                        <p data-i18n="project3_desc">Plataforma de comercio electrónico con pasarela de pagos integrada.</p>
-                    </div>
-                </a>
-            </div>
+<footer>
+    <div class="footer-content">
+        <div class="logo">PORTFOLIO</div>
+        <p class="copyright">
+            © 2025 - Rubén Mateos Amores. Todos los derechos reservados.
+        </p>
+    </div>
+</footer>
 
-            <div class="proyecto-item">
-                <a href="#">
-                    <img src="foto4.jpeg" alt="Proyecto 4">
-                    <div class="info">
-                        <h3 data-i18n="project4_title">Proyecto 4 - App Móvil</h3>
-                        <p data-i18n="project4_desc">Aplicación móvil híbrida para gestión de productividad.</p>
-                    </div>
-                </a>
-            </div>
-
-            <div class="proyecto-item">
-                <a href="#">
-                    <img src="foto5.jpeg" alt="Proyecto 5">
-                    <div class="info">
-                        <h3 data-i18n="project5_title">Proyecto 5 - API REST</h3>
-                        <p data-i18n="project5_desc">Backend robusto con autenticación y documentación completa.</p>
-                    </div>
-                </a>
-            </div>
-
-            <div class="proyecto-item">
-                <a href="#">
-                    <img src="foto6.jpeg" alt="Proyecto 6">
-                    <div class="info">
-                        <h3 data-i18n="project6_title">Proyecto 6 - Portal Web</h3>
-                        <p data-i18n="project6_desc">Portal corporativo con CMS personalizado y SEO optimizado.</p>
-                    </div>
-                </a>
-            </div>
-        </section>
-
-        <div class="center-btn">
-            <a href="index.html" class="btn-secondary" data-i18n="back_home">← Volver al inicio</a>
-        </div>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <div class="logo">PORTFOLIO</div>
-            <div class="redes-sociales">
-                <a href="https://facebook.com" target="_blank" title="Facebook">f</a>
-                <a href="https://twitter.com" target="_blank" title="Twitter">X</a>
-                <a href="https://instagram.com" target="_blank" title="Instagram">ig</a>
-                <a href="https://linkedin.com" target="_blank" title="LinkedIn">in</a>
-                <a href="https://github.com/ITB2526-RubenMateos/TA05_AmoresMateosRuben" target="_blank" title="GitHub">gh</a>
-            </div>
-            <p class="copyright">© 2025-Rubén Mateos Amores. <span data-i18n="footer_rights">Todos los derechos reservados.</span></p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
