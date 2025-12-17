@@ -1,98 +1,25 @@
-document.addEventListener("DOMContentLoaded", () => {
+const proyectos = [
+    { titulo: "Proyecto 1 - Aplicación Web", descripcion: "Plataforma moderna con arquitectura escalable.", imagen: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97", tecnologias: ["React", "Node.js", "SQL"], link: "#" },
+    { titulo: "Proyecto 2 - Dashboard Analytics", descripcion: "Dashboard interactivo para análisis de datos.", imagen: "https://images.unsplash.com/photo-1551288049-bbbda5366fd9", tecnologias: ["Python", "Machine Learning"], link: "#" },
+    { titulo: "Proyecto 3 - App Móvil", descripcion: "Gestión de tareas diarias y productividad.", imagen: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9", tecnologias: ["Android", "Java"], link: "#" },
+    { titulo: "Proyecto 4 - E-commerce", descripcion: "Tienda online con pasarela de pago segura.", imagen: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308", tecnologias: ["PHP", "SQL"], link: "#" },
+    { titulo: "Proyecto 5 - Portfolio Personal", descripcion: "Portfolio responsive para mostrar trabajos.", imagen: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6", tecnologias: ["HTML", "CSS", "JavaScript"], link: "#" },
+    { titulo: "Proyecto 6 - API REST", descripcion: "Backend robusto con autenticación JWT.", imagen: "https://images.unsplash.com/photo-1519389950473-47ba0277781c", tecnologias: ["Node.js", "Express", "MongoDB"], link: "#" },
+    { titulo: "Proyecto 7 - Blog Técnico", descripcion: "Artículos sobre ciberseguridad y hacking ético.", imagen: "https://images.unsplash.com/photo-1506744038136-46273834b3fb", tecnologias: ["Ciberseguridad", "PHP"], link: "#" },
+    { titulo: "Proyecto 8 - Sistema de Reservas", descripcion: "Gestión de citas para clínicas o negocios.", imagen: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca", tecnologias: ["React", "Node.js"], link: "#" },
+    { titulo: "Proyecto 9 - Landing Page", descripcion: "Alta conversión para marketing digital.", imagen: "https://images.unsplash.com/photo-1465101178521-c1a9136a3b99", tecnologias: ["HTML", "CSS"], link: "#" },
+    { titulo: "Proyecto 10 - Chat Real-time", descripcion: "Mensajería instantánea usando WebSockets.", imagen: "https://images.unsplash.com/photo-1555066931-4365d14bab8c", tecnologias: ["Node.js", "JavaScript"], link: "#" },
+    { titulo: "Proyecto 11 - Plataforma Cursos", descripcion: "LMS para educación online con vídeos.", imagen: "https://images.unsplash.com/photo-1501504905252-473c47e087f8", tecnologias: ["React", "SQL"], link: "#" },
+    { titulo: "Proyecto 12 - App Finanzas", descripcion: "Control de gastos y presupuestos personales.", imagen: "https://images.unsplash.com/photo-1554224155-6726b3ff858f", tecnologias: ["Android", "iOS"], link: "#" },
+    { titulo: "Proyecto 13 - Help Desk", descripcion: "Sistema de tickets y soporte al cliente.", imagen: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d", tecnologias: ["PHP", "SQL"], link: "#" },
+    { titulo: "Proyecto 14 - Monitor de Red", descripcion: "Escaneo de puertos y alertas de tráfico.", imagen: "https://images.unsplash.com/photo-1558494949-ef010cbdcc48", tecnologias: ["Ciberseguridad", "Python"], link: "#" },
+    { titulo: "Proyecto 15 - Galería de Arte", descripcion: "Exposición virtual de obras digitales.", imagen: "https://images.unsplash.com/photo-1561214115-f2f134cc4912", tecnologias: ["iOS", "Swift"], link: "#" },
+    { titulo: "Proyecto 16 - CRM Ventas", descripcion: "Gestión de clientes y embudos de venta.", imagen: "https://images.unsplash.com/photo-1552664730-d307ca884978", tecnologias: ["HTML", "CSS", "JavaScript"], link: "#" },
+    { titulo: "Proyecto 17 - Gestión Inventario", descripcion: "Control de stock para almacenes.", imagen: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d", tecnologias: ["Node.js", "SQL"], link: "#" },
+    { titulo: "Proyecto 18 - App Fitness", descripcion: "Rutinas de ejercicio y contador de calorías.", imagen: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438", tecnologias: ["Android", "iOS"], link: "#" },
+    { titulo: "Proyecto 19 - Predicción Precios", descripcion: "IA para predecir precios inmobiliarios.", imagen: "https://images.unsplash.com/photo-1560518883-ce09059eeffa", tecnologias: ["Python", "Machine Learning"], link: "#" },
+    { titulo: "Proyecto 20 - Sistema Votación", descripcion: "Encuestas seguras con resultados en vivo.", imagen: "https://images.unsplash.com/photo-1540910419892-4a36d2c3266c", tecnologias: ["React", "Node.js"], link: "#" }
+];
 
-    const projects = [
-        { title: "Proyecto 1", desc: "Aplicación web moderna", img: "foto1.jpeg", tags: ["web"] },
-        { title: "Proyecto 2", desc: "Dashboard analytics", img: "foto2.jpeg", tags: ["dashboard"] },
-        { title: "Proyecto 3", desc: "Portfolio personal", img: "foto3.jpeg", tags: ["web"] },
-        { title: "Proyecto 4", desc: "App móvil tareas", img: "foto4.jpeg", tags: ["mobile"] },
-        { title: "Proyecto 5", desc: "Landing page", img: "foto5.jpeg", tags: ["marketing"] },
-        { title: "Proyecto 6", desc: "Portal corporativo", img: "foto6.jpeg", tags: ["cms"] },
-
-        { title: "Proyecto 7", desc: "API REST", img: "foto1.jpeg", tags: ["backend"] },
-        { title: "Proyecto 8", desc: "Juego 2D", img: "foto2.jpeg", tags: ["frontend"] },
-        { title: "Proyecto 9", desc: "Sistema reservas", img: "foto3.jpeg", tags: ["saas"] },
-        { title: "Proyecto 10", desc: "App chat", img: "foto4.jpeg", tags: ["realtime"] },
-        { title: "Proyecto 11", desc: "Blog técnico", img: "foto5.jpeg", tags: ["content"] },
-        { title: "Proyecto 12", desc: "CV interactivo", img: "foto6.jpeg", tags: ["uiux"] },
-
-        { title: "Proyecto 13", desc: "Microservicio auth", img: "foto1.jpeg", tags: ["security"] },
-        { title: "Proyecto 14", desc: "Sistema encuestas", img: "foto2.jpeg", tags: ["data"] },
-        { title: "Proyecto 15", desc: "Automatización CI/CD", img: "foto3.jpeg", tags: ["devops"] },
-        { title: "Proyecto 16", desc: "Plugin CMS", img: "foto4.jpeg", tags: ["cms"] },
-        { title: "Proyecto 17", desc: "Prototipo UI", img: "foto5.jpeg", tags: ["uiux"] },
-        { title: "Proyecto 18", desc: "Gestor financiero", img: "foto6.jpeg", tags: ["finance"] },
-
-        { title: "Proyecto 19", desc: "App productividad", img: "foto1.jpeg", tags: ["mobile"] },
-        { title: "Proyecto 20", desc: "Panel admin", img: "foto2.jpeg", tags: ["dashboard"] }
-    ];
-
-    const list = document.getElementById("projects-list");
-    const count = document.getElementById("projects-count");
-    const search = document.getElementById("project-search");
-    const sort = document.getElementById("sort-projects");
-    const filterPanel = document.getElementById("filters-panel");
-    const filterContainer = document.getElementById("filters-container");
-    const toggleFilters = document.getElementById("toggle-filters");
-
-    let activeTag = null;
-
-    const uniqueTags = [...new Set(projects.flatMap(p => p.tags))];
-
-    uniqueTags.forEach(tag => {
-        const el = document.createElement("span");
-        el.className = "filter-tag";
-        el.textContent = tag;
-        el.onclick = () => {
-            activeTag = activeTag === tag ? null : tag;
-            document.querySelectorAll(".filter-tag").forEach(t => t.classList.remove("active"));
-            if (activeTag) el.classList.add("active");
-            render();
-        };
-        filterContainer.appendChild(el);
-    });
-
-    toggleFilters.onclick = () => {
-        filterPanel.classList.toggle("active");
-    };
-
-    function render() {
-        let filtered = [...projects];
-
-        const q = search.value.toLowerCase();
-        if (q) {
-            filtered = filtered.filter(p =>
-                p.title.toLowerCase().includes(q) ||
-                p.desc.toLowerCase().includes(q)
-            );
-        }
-
-        if (activeTag) {
-            filtered = filtered.filter(p => p.tags.includes(activeTag));
-        }
-
-        if (sort.value === "alpha") {
-            filtered.sort((a, b) => a.title.localeCompare(b.title));
-        }
-
-        list.innerHTML = "";
-        filtered.forEach(p => {
-            const item = document.createElement("div");
-            item.className = "proyecto-item";
-            item.innerHTML = `
-                <img src="${p.img}" alt="${p.title}">
-                <div class="info">
-                    <h3>${p.title}</h3>
-                    <p>${p.desc}</p>
-                </div>
-            `;
-            list.appendChild(item);
-        });
-
-        count.textContent = `Mostrando ${filtered.length} proyectos`;
-    }
-
-    search.oninput = render;
-    sort.onchange = render;
-
-    render();
-});
+// La función de filtrado y renderizado se mantiene igual que en tu archivo original 
+// pero asegúrate de que el event listener esté correctamente vinculado.

@@ -1,108 +1,82 @@
-/* ================= PROYECTOS BUSCADOR Y FILTROS ================= */
+/* ================= BUSCADOR Y FILTROS ================= */
 
-.projects-controls {
-    display: flex;
-    gap: 15px;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1400px;
-    margin: 0 auto 30px;
-    padding: 0 40px;
+.proyectos-header {
+    text-align: center;
+    margin-bottom: 50px;
 }
 
-.projects-controls input {
+.proyectos-header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.buscador-filtros-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+    flex-wrap: wrap; /* Para responsive */
+}
+
+.search-box {
+    position: relative;
     flex: 1;
-    padding: 14px 18px;
-    border-radius: 12px;
+    max-width: 500px;
+    min-width: 280px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 15px 20px 15px 45px;
+    border-radius: 15px;
     border: 1px solid var(--border);
     background: var(--bg-card);
     color: var(--text-primary);
     font-size: 1rem;
+    transition: all 0.3s ease;
 }
 
-.projects-controls-right {
-    display: flex;
-    gap: 10px;
+.search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.5;
 }
 
-.projects-controls select {
-    padding: 14px 16px;
-    border-radius: 12px;
+.filter-box select {
+    padding: 15px 25px;
+    border-radius: 15px;
     border: 1px solid var(--border);
     background: var(--bg-card);
     color: var(--text-primary);
-}
-
-.filters-panel {
-    max-width: 1400px;
-    margin: 0 auto 40px;
-    padding: 20px 40px;
-    display: none;
-}
-
-.filters-panel.active {
-    display: block;
-}
-
-#filters-container {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-top: 10px;
-}
-
-.filter-tag {
-    padding: 8px 14px;
-    border-radius: 20px;
-    background: var(--bg-secondary);
-    color: var(--accent);
+    font-size: 1rem;
     cursor: pointer;
-    border: 1px solid var(--border);
-    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    min-width: 200px;
 }
 
-.filter-tag.active {
-    background: var(--accent);
-    color: white;
+.search-box input:focus, .filter-box select:focus {
+    outline: none;
     border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
 }
 
-/* reutiliza tu grid existente */
-.lista-proyectos {
+/* Re-ajuste de la lista para que sea responsive */
+.proyectos-lista {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 30px;
-    padding: 0 40px;
+    padding-top: 20px;
 }
-
-.projects-count {
-    text-align: center;
-    color: var(--text-secondary);
-    margin-top: 20px;
-}
-
-/* ================= RESPONSIVE ================= */
 
 @media (max-width: 768px) {
-    .projects-controls {
+    .buscador-filtros-container {
         flex-direction: column;
-        padding: 0 20px;
+        align-items: center;
     }
-
-    .projects-controls-right {
+    .search-box, .filter-box, .filter-box select {
         width: 100%;
-    }
-
-    .projects-controls select,
-    .projects-controls button {
-        width: 100%;
-    }
-
-    .filters-panel {
-        padding: 20px;
-    }
-
-    .lista-proyectos {
-        padding: 0 20px;
+        max-width: 100%;
     }
 }

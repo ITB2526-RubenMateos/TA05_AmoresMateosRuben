@@ -1,114 +1,32 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mi Portfolio - Página Principal</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="icon" type="image/png" href="logo.jpg">
-</head>
-<body>
-    <header>
-        <div class="logo">
-            <a href="index.html" aria-label="Inicio - Portfolio">
-                <!-- CAMBIA ESTA RUTA por la de tu logo -->
-                <img src="logo.jpg" alt="Logo de Portfolio" class="logo-img" width="40" height="40" loading="lazy">
-                <span class="logo-text">PORTFOLIO</span>
-            </a>
-        </div>
-        <div class="header-controls">
-            <button class="theme-toggle" onclick="toggleTheme()">☀️ <span>Light</span></button>
-            <button class="lang-toggle" onclick="toggleLang()">🇪🇸 <span>ES</span></button>
-            <button class="hamburger" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </header>
-
-    <div class="nav-overlay"></div>
-    <nav>
-        <ul>
-            <li><a href="index.html" data-i18n="nav_home">Inicio</a></li>
-            <li><a href="proyectos.html" data-i18n="nav_projects">Proyectos</a></li>
-            <li><a href="contacto.html" data-i18n="nav_contact">Contacto</a></li>
-        </ul>
-    </nav>
-
-    <main>
-        <section class="hero">
-            <h1 data-i18n="hero_title">Bienvenido a Mi Portfolio</h1>
-            <p data-i18n="hero_subtitle">Desarrollador apasionado creando experiencias digitales excepcionales. Explora mis proyectos y descubre lo que puedo hacer por ti.</p>
-        </section>
-
-        <div class="section-title">
-            <h2 data-i18n="featured_title">Proyectos Destacados</h2>
-            <p data-i18n="featured_subtitle">Una selección de mis trabajos más recientes e innovadores</p>
-        </div>
-
-        <section class="proyectos-destacados">
-            <div class="proyecto-card">
-                <a href="proyecto1.html">
-                    <div class="img-container">
-                        <img src="foto1.jpeg" alt="Proyecto 1">
-                        <div class="overlay">
-                            <span data-i18n="view_project">Ver proyecto →</span>
-                        </div>
-                    </div>
-                    <div class="info">
-                        <h3 data-i18n="project1_title">Proyecto 1 - Aplicación Web</h3>
-                        <p data-i18n="project1_desc">Plataforma moderna con arquitectura escalable y diseño responsive. Desarrollada con las últimas tecnologías.</p>
-                        <div class="tags">
-                            <span class="tag">React</span>
-                            <span class="tag">Node.js</span>
-                            <span class="tag">PostgreSQL</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="proyecto-card">
-                <a href="proyecto2.html">
-                    <div class="img-container">
-                        <img src="foto2.jpeg" alt="Proyecto 2">
-                        <div class="overlay">
-                            <span data-i18n="view_project">Ver proyecto →</span>
-                        </div>
-                    </div>
-                    <div class="info">
-                        <h3 data-i18n="project2_title">Proyecto 2 - Dashboard Analytics</h3>
-                        <p data-i18n="project2_desc">Sistema de análisis de datos en tiempo real con visualizaciones interactivas y reportes automatizados.</p>
-                        <div class="tags">
-                            <span class="tag">Vue.js</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">D3.js</span>
-                        </div>
-                    </div>
-                </a>
+<main>
+        <section class="proyectos-header">
+            <h1 data-i18n="all_projects_title">Todos Mis Proyectos</h1>
+            <p data-i18n="all_projects_subtitle">Explora mi trabajo filtrando por nombre o tecnología.</p>
+            
+            <div class="buscador-filtros-container">
+                <div class="search-box">
+                    <input type="text" id="buscador" placeholder="Buscar por nombre o descripción..." />
+                    <span class="search-icon">🔍</span>
+                </div>
+                <div class="filter-box">
+                    <select id="filtro-tecnologia">
+                        <option value="">Todas las tecnologías</option>
+                        <option value="React">React</option>
+                        <option value="Node.js">Node.js</option>
+                        <option value="Python">Python</option>
+                        <option value="Android">Android</option>
+                        <option value="iOS">iOS</option>
+                        <option value="PHP">PHP</option>
+                        <option value="SQL">SQL</option>
+                        <option value="Ciberseguridad">Ciberseguridad</option>
+                        <option value="Machine Learning">Machine Learning</option>
+                        <option value="HTML">HTML/CSS</option>
+                        <option value="JavaScript">JavaScript</option>
+                    </select>
+                </div>
             </div>
         </section>
 
-        <div class="center-btn">
-            <a href="proyectos.html" class="btn-primary" data-i18n="view_all">Ver todos los proyectos →</a>
-        </div>
+        <section class="proyectos-lista" id="proyectos-lista">
+            </section>
     </main>
-
-    <footer>
-        <div class="footer-content">
-            <div class="logo">PORTFOLIO</div>
-            <div class="redes-sociales">
-                <a href="https://facebook.com" target="_blank" title="Facebook">f</a>
-                <a href="https://twitter.com" target="_blank" title="Twitter">X</a>
-                <a href="https://instagram.com" target="_blank" title="Instagram">ig</a>
-                <a href="https://linkedin.com" target="_blank" title="LinkedIn">in</a>
-                <a href="https://github.com/ITB2526-RubenMateos/TA05_AmoresMateosRuben" target="_blank" title="GitHub">gh</a>
-            </div>
-            <p class="copyright">© 2025-Rubén Mateos Amores. <span data-i18n="footer_rights">Todos los derechos reservados.</span></p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
